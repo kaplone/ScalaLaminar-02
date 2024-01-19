@@ -15,10 +15,7 @@ object ScalaLaminar_02 {
       .build()
 
     val appElement: Div = div(
-      div(
-      h1("_"),
-      "Current time is:",
-      b("12:00")),
+
       div(button(" | Button | ", cls := "button-3", role := "button"),
       div(input("--> input ")),
         s1_14,
