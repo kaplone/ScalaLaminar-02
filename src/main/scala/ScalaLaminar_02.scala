@@ -14,14 +14,25 @@ object ScalaLaminar_02 {
     val s1_16 = ElementBuilder.CheckBoxBuilder()
       .build()
 
+    // hold the value
+    val titleVar: Var[String] = Var("Some title here")
+
     val appElement: Div = div(
 
+      // expose the value
+      h1(child.text <-- titleVar.signal),
+
+      div(input(
+        placeholder := "Write a title",
+        // update the value
+        inContext(s => onInput.map(_ => s.ref.value) --> titleVar)
+      )),
+
       div(button(" | Button | ", cls := "button-3", role := "button"),
-      div(input("--> input ")),
         s1_14,
         s1_15,
         s1_16
-        )
+      )
     )
 
     // this is how you render the appElement in the browser
