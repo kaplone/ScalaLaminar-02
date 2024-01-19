@@ -23,7 +23,7 @@ object ScalaLaminar_02 {
       h1(child.text <-- titleVar.signal),
 
       div(input(
-        placeholder := "Type a title",
+        placeholder := "Write a title",
         // update the value
         inContext(s => onInput.map(_ => s.ref.value) --> titleVar)
       )),
@@ -32,7 +32,7 @@ object ScalaLaminar_02 {
         s1_14,
         s1_15,
         s1_16
-        )
+      )
     )
 
     // this is how you render the appElement in the browser
